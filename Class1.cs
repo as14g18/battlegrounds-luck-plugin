@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using Hearthstone_Deck_Tracker;
 using Hearthstone_Deck_Tracker.API;
 using Hearthstone_Deck_Tracker.Enums;
+using Hearthstone_Deck_Tracker.Hearthstone.Entities;
 using Hearthstone_Deck_Tracker.Plugins;
 
 namespace LuckyPlugin
@@ -15,12 +16,8 @@ namespace LuckyPlugin
     {
         internal static void TurnStart(ActivePlayer player)
         {
-
-        }
-
-        internal static void GameStart()
-        {
-
+            List<Entity> playerBoard = (List<Entity>)Hearthstone_Deck_Tracker.API.Core.Game.Player.Board;
+            List<Entity> oppBoard = (List<Entity>)Hearthstone_Deck_Tracker.API.Core.Game.Opponent.Board;
         }
     }
 
@@ -30,7 +27,6 @@ namespace LuckyPlugin
         public void OnLoad()
         {
             // Triggered upon startup and when the user ticks the plugin on
-            GameEvents.OnGameStart.Add(Class1.GameStart);
             GameEvents.OnTurnStart.Add(Class1.TurnStart);
         }
 

@@ -1,0 +1,3 @@
+[submodule "hearthstone-battlegrounds-simulator"]
+	path = hearthstone-battlegrounds-simulator
+	url = https://github.com/twanvl/hearthstone-battlegrounds-simulator
